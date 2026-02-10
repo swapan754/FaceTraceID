@@ -50,6 +50,14 @@ Set API URL in browser local storage if needed:
 localStorage.setItem('facetrace_api', 'http://localhost:8000')
 ```
 
+
+### Offline demo fallback
+
+If the backend is unavailable, the web app now automatically switches to **offline demo mode** so the UI remains usable:
+- mock platform matches are generated locally from the uploaded filename
+- verification returns a demo confidence
+- history is stored in browser local storage
+
 ## API overview
 
 - `POST /api/v1/scan` multipart form with `image`, optional `user_id`
