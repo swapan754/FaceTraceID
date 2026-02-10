@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FaceTraceID</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="container">
+      <h1>FaceTraceID</h1>
+      <p>Find where your face appears publicly and verify profile authenticity.</p>
+    </header>
+
+    <main class="container grid">
+      <section class="card">
+        <h2>Home</h2>
+        <p>Upload a photo (JPG, PNG, WEBP - max 10MB) to search for potential profile matches.</p>
+        <form id="scanForm">
+          <label>User ID <input type="text" name="user_id" placeholder="guest" /></label>
+          <label>Upload Photo <input type="file" name="image" accept="image/*" required /></label>
+          <button type="submit">Upload & Scan</button>
+        </form>
+      </section>
+
+      <section class="card">
+        <h2>Identity Verification Mode</h2>
+        <p>Upload a live selfie and ID photo for basic authenticity verification.</p>
+        <form id="verifyForm">
+          <label>User ID <input type="text" name="user_id" placeholder="guest" /></label>
+          <label>Selfie <input type="file" name="selfie" accept="image/*" required /></label>
+          <label>ID Photo <input type="file" name="id_photo" accept="image/*" required /></label>
+          <button type="submit">Verify Identity</button>
+        </form>
+        <div id="verifyResult"></div>
+      </section>
+
+      <section class="card full">
+        <h2>Results Dashboard</h2>
+        <div class="toolbar">
+          <label>Filter by platform
+            <select id="platformFilter">
+              <option value="all">All</option>
+            </select>
+          </label>
+        </div>
+        <div id="results" class="results"></div>
+      </section>
+
+      <section class="card full">
+        <h2>Profile</h2>
+        <button id="loadHistory">Load Search History</button>
+        <ul id="history"></ul>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
